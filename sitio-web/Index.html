@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StylishSteps - Huaraches Artesanales</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO NUEVO -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="Imagenes/Logo C.jpeg" alt="StylishSteps Logo">
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="Index.html">Inicio</a>
+      <a href="Dama.html">Dama</a>
+      <a href="Caballero.html">Caballero</a>
+      <a href="Niña.html">Niña</a>
+      <a href="#sobre-nosotros">Sobre Nosotros</a>
+    </nav>
+
+    <div class="search-login-cart">
+  <div class="search-box">
+    <input type="text" id="busqueda" placeholder="Buscar...">
+    <i class="fas fa-search" onclick="buscar()"></i>
+  </div>
+      <a href="Mi cuenta.html">
+  <i class="fas fa-user"></i>
+</a>
+      <a href="Carrito.html">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+    </div>
+  </header>
+
+<!-- BANNER PRINCIPAL CON IMAGEN -->
+<section class="main-banner">
+  <a href="#novedades">
+  <img src="Imagenes/Banner.png" alt="Banner principal">
+  </a>
+</section>
+
+
+  <!-- CATEGORÍAS -->
+  <section class="categorias">
+    <div class="container">
+      <h2>Categorías</h2>
+      <div class="categoria-grid">
+        <a href="Dama.html" class="categoria-card">
+          <img src="Imagenes/Dama.png" alt="Huaraches para dama" />
+        </a>
+        <a href="Caballero.html" class="categoria-card">
+          <img src="Imagenes/Caballero.png" alt="Huaraches para caballero" />
+        </a>
+        <a href="Niña.html" class="categoria-card">
+          <img src="Imagenes/Niño.png" alt="Huaraches para niño" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVEDADES -->
+  <section class="novedades" id="novedades">
+    <div class="container">
+      <h2>Novedades</h2>
+      <div class="productos-grid">
+        <div class="producto-card">
+          <img src="Imagenes/Huaraches 1.png" alt="Huarache Alpargata Bordado Shedrón Clásico" />
+          <h3>Huarache Alpargata<br>Bordado Shedrón Clásico</h3>
+          <p class="precio">$540.00</p>
+          <p class="pago-azul">24 x $53.54 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Alpargata Bordado Shedrón Clásico', 540.00, 'Huaraches 1.png')">Agregar al carrito</button>
+        </div>
+        <div class="producto-card">
+          <img src="Imagenes/Huaraches 2.png" alt="Huarache Alpargata Rebozo Tang Clásico" />
+          <h3>Huarache Alpargata Rebozo<br>Tang Clásico</h3>
+          <p class="precio">$520.00</p>
+          <p class="pago-azul">24 x $53.54 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Alpargata Rebozo Tang Clásico', 520.00, 'Huaraches 2.png')">Agregar al carrito</button>
+        </div>
+        <div class="producto-card">
+          <img src="Imagenes/Huaraches 3.png" alt="Huarache Bordado Frida Shedrón Cerrado" />
+          <h3>Huarache Bordado Frida<br>Shedrón Cerrado</h3>
+          <p class="precio">$690.00</p>
+          <p class="pago-azul">24 x $40.21 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Bordado Frida Shedrón Cerrado', 690.00, 'Huaraches 3.png')">Agregar al carrito</button>
+        </div>
+        <div class="producto-card">
+          <img src="Imagenes/Huaraches 4.png" alt="Huarache Talón Pulsera Troquelado Trenza Amarillo" />
+          <h3>Huarache Talón Pulsera<br>Troquelado Trenza Amarillo</h3>
+          <p class="precio">$3,125.00</p>
+          <p class="pago-azul">24 x $130.21 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Talón Pulsera Troquelado Trenza Amarillo', 3125.00, 'Huaraches 4.png')">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+  <!-- MENSAJE DE PRODUCTO ORIGINAL -->
+   <section id="sobre-nosotros" class="producto-original">
+  <div class="container">
+    <h2>¿Los productos son originales?</h2>
+    <p>Todos los productos son 100% originales y tienen garantía de satisfacción. Son nuevos, vienen en su
+      empaque original y no han sido abiertos ni probados.</p>
+  </div>
+</section>
+
+ <!-- IMAGEN DE HUARACHE DESTACADO -->
+<section class="imagen-huarache">
+  <div class="container">
+    <img src="Imagenes/Collage.png" alt="Huarache artesanal destacado">
+  </div>
+</section>
+
+
+<!-- MISIÓN -->
+<section id="quienes-somos" class="mision">
+  <div class="container mv-container">
+    <!-- IMAGEN A LA IZQUIERDA -->
+    <div class="mv-img">
+      <img src="Imagenes/Mision.png" alt="Imagen de Misión">
+    </div>
+    <!-- TEXTO A LA DERECHA -->
+    <div class="mv-text">
+      <h2>Misión</h2>
+      <p>Ofrecer calzado tradicional de alta calidad a través de una plataforma innovadora, optimizando la gestión de ventas e inventario con tecnología, para brindar a nuestros clientes una experiencia de compra eficiente, segura y accesible.</p>
+      <a href="Mision.html" class="btn-negro">Mostrar más</a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIÓN -->
+<section class="vision">
+  <div class="container mv-container">
+    <!-- TEXTO A LA IZQUIERDA -->
+    <div class="mv-text">
+      <h2>Visión</h2>
+      <p>Ser la empresa líder en la venta de huaraches y calzado tradicional a nivel nacional, innovando con tecnología para ofrecer una experiencia de compra eficiente, segura y accesible, impulsando el crecimiento del negocio y la satisfacción de nuestros clientes.</p>
+      <a href="Vision.html" class="btn-negro">Mostrar más</a>
+    </div>
+    <!-- IMAGEN A LA DERECHA -->
+    <div class="mv-img">
+      <img src="Imagenes/Vision.png" alt="Imagen de Visión">
+    </div>
+  </div>
+</section>
+
+<!-- Logo -->
+<section class="imagen-logo">
+  <div class="container">
+    <img src="Imagenes/Logo B.png" alt="Huarache artesanal destacado">
+  </div>
+</section>
+
+  <!-- PIE DE PÁGINA COMPLETO -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="brand">Stylishsteps</div>
+      <div class="subscription">
+  <span>Regístrate y recibe nuestras ofertas.</span>
+  <input type="email" id="correo-suscripcion" placeholder="Ingresa tu correo electrónico...">
+  <button onclick="enviarCorreo()">Enviar</button>
+</div>
+
+    </div>
+
+    <div class="footer-middle">
+      <div class="footer-column">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
+          <li><a href="#sobre-nosotros">¿Cómo comprar?</a></li>
+          <li><a href="Preguntas frecuentes">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contáctanos</h4>
+        <ul>
+            <li><a href="WhatsApp.html">WhatsApp</a></li>
+            <li><a href="Mayoristas.html">Mayoristas</a></li>
+            <li><a href="ventas@stylishsteps.com">ventas@stylishsteps.com</a></li>
+          </ul>
+      </div>
+      <div class="footer-column social-icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook-f"></i>
+      </div>
+    </div>
+
+    <div class="payment-wrapper">
+      <div class="payment-methods">
+        <span>Métodos de pago</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright STYLISHSTEPS - 2025. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+  function buscar() {
+    const termino = document.getElementById('busqueda').value.trim().toLowerCase();
+
+    if (!termino) {
+      alert("Por favor escribe algo para buscar.");
+      return;
+    }
+
+    // Palabras clave y redirecciones
+    if (termino.includes("dama")) {
+      window.location.href = "Dama.html";
+    } else if (termino.includes("caballero")) {
+      window.location.href = "Caballero.html";
+    } else if (termino.includes("niña")) {
+      window.location.href = "Niña.html";
+    } else if (termino.includes("carrito")) {
+      window.location.href = "Carrito.html";
+    } else if (termino.includes("pedidos")) {
+      window.location.href = "Pedidos.html";
+    } else if (termino.includes("mision")) {
+      window.location.href = "Index.html#mision";
+    } else if (termino.includes("visión") || termino.includes("vision")) {
+      window.location.href = "Index.html#vision";
+    } else if (termino.includes("nosotros")) {
+      window.location.href = "Index.html#sobre-nosotros";
+    } else if (termino.includes("iniciar sesión") || termino.includes("login") || termino.includes("sesión") || termino.includes("sesion")) {
+      window.location.href = "Iniciar-sesion.html";
+    } else {
+      alert("No se encontró ningún resultado para: " + termino);
+    }
+  }
+
+  function enviarCorreo() {
+    const correoSuscripcion = document.getElementById('correo-suscripcion').value.trim();
+    if (correoSuscripcion) {
+      // Guardamos el correo en el localStorage para usarlo después
+      localStorage.setItem('correo', correoSuscripcion);
+      alert("Correo suscrito con éxito!");
+    } else {
+      alert("Por favor, ingresa un correo válido.");
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+  const correoGuardado = localStorage.getItem('correo');
+  if (correoGuardado) {
+    document.getElementById('email').value = correoGuardado;
+  }
+});
+
+
+  function enviarCorreo() {
+    const correo = document.getElementById('correo-suscripcion').value.trim();
+    const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!correo) {
+      alert("Por favor, ingresa un correo electrónico.");
+    } else if (!correoValido.test(correo)) {
+      alert("Por favor, ingresa un correo electrónico válido (ejemplo@dominio.com).");
+    } else {
+      localStorage.setItem('correo', correo); // Guarda por si se desea recuperar desde localStorage
+      window.location.href = "Iniciar-sesion.html?email=" + encodeURIComponent(correo);
+    }
+  }
+
+  function agregarAlCarrito(nombre, precio, imagen) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    carrito.push({
+      nombre: nombre,
+      precio: precio,
+      imagen: imagen,
+      cantidad: 1
+    });
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(nombre + " se ha agregado al carrito.");
+  }
+</script>
+
+</body>
+</html>

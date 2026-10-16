@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niño - StylishSteps</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    /* ENCABEZADO PERSONALIZADO */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f1dbc0;
+      padding: 10px 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+     background-color: transparent;
+    }
+
+    .logo img {
+      width: 90px;
+      margin-right: 20px;
+      border-radius: 10px;
+      box-shadow: none;
+    }
+
+    .logo-text strong {
+      font-size: 20px;
+      color: #3b1e1a;
+    }
+
+    .logo-text span {
+      color: #9c5b3d;
+    }
+
+    .logo-text p {
+      font-size: 10px;
+      margin: 0;
+      color: #3b1e1a;
+    }
+
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6b3e3e;
+      font-weight: bold;
+    }
+
+    .search-login-cart {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #c9a88c;
+      padding: 5px 10px;
+      background-color: #f1dbc0;
+      border-radius: 2px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+
+    .search-box i {
+      color: #6b3e3e;
+    }
+
+    .search-login-cart i {
+      font-size: 18px;
+      color: #6b3e3e;
+      cursor: pointer;
+    }
+
+    /* --- NOVEDADES --- */
+.novedades {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.novedades h2 {
+  font-size: 2.5rem;
+  color: #000;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.producto-card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.producto-card img {
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.producto-card h3 {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.producto-card .precio {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.producto-card .pago-azul {
+  color: #00a2c6;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.producto-card button {
+  background-color: #f1dbc0;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+    /* --- IMAGEN DE LOGO --- */
+    .imagen-logo {
+      padding: 2rem 0;
+    }
+
+    .imagen-logo img {
+      background-color: transparent;
+      display: block;
+      margin: 0 auto;
+    }
+
+   /* PIE DE PÁGINA */
+    .footer-top {
+      background-color: #edf0f1;
+      padding: 30px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-top .brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .footer-top .subscription {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .footer-top input[type="email"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 250px;
+    }
+    .footer-top button {
+      background: none;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .footer-middle {
+      background-color: #3b1e1a;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 10%;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .payment-wrapper {
+      background-color: #3b1e1a;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10% 20px;
+      flex-wrap: wrap;
+    }
+
+    .payment-methods {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .payment-methods img {
+      height: 30px;  /* Ajuste de tamaño para mejor visibilidad */
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .social-icons i {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      background-color:#321e1c;
+      color: #fff;
+      text-align: left;
+      padding: 15px 10%;
+      font-size: 13px;
+    }
+
+    .footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  display: block;              /* Hace que cada enlace ocupe su propia línea */
+  text-decoration: none;       /* Quita el subrayado */
+  color: inherit;              /* Usa el mismo color que el texto normal */
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;  /* (opcional) subrayado al pasar el cursor */
+}
+
+    @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin: 5px 0;
+  }
+
+  .search-login-cart {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .two-columns {
+    flex-direction: column;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+
+  .footer-top,
+  .footer-middle,
+  .payment-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-column,
+  .subscription,
+  .payment-methods {
+    width: 100%;
+  }
+
+  .radio-option {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+</style>
+</head>
+<body>
+    
+
+    <!-- ENCABEZADO MODERNO PERSONALIZADO -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="Imagenes/Logo C.jpeg" alt="Logo Stylish Steps" />
+    </div>
+    <nav class="nav-links">
+       <a href="Index.html">Inicio</a>
+      <a href="Dama.html">Dama</a>
+      <a href="Caballero.html">Caballero</a>
+      <a href="Niña.html">Niña</a>
+      <a href="Index.html#sobre-nosotros">Sobre Nosotros</a>
+
+    </nav>
+    <div class="search-login-cart">
+  <div class="search-box">
+    <input type="text" id="busqueda" placeholder="Buscar...">
+    <i class="fas fa-search" onclick="buscar()"></i>
+  </div>
+       <a href="Mi cuenta.html">
+  <i class="fas fa-user"></i>
+</a>
+     <a href="Carrito.html">
+  <i class="fas fa-shopping-cart"></i>
+</a>
+    </div>
+  </header>
+
+ <!-- NOVEDADES -->
+ <section class="niña">
+    <div class="container">
+      <h2>Niña</h2>
+      <div class="productos-grid">
+        <div class="producto-card">
+          <img src="Imagenes/Huarache N1.jpeg" alt="Huarache Alpargata Bordado Shedrón Clásico" />
+          <h3>Huarache Niña Trenza<br>Rebozo Tirilla</h3>
+          <p class="precio">$340.00</p>
+          <p class="pago-azul">24 x $14.54 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Niña Trenza Rebozo Tirilla', 340.00, 'Huarache N1.jpeg')">Agregar al carrito</button>
+        </div>
+        <div class="producto-card">
+          <img src="Imagenes/Huarache N2.jpeg" alt="Huarache Alpargata Rebozo Tang Clásico" />
+          <h3>Huarache Niña <br>Trenza Tang</h3>
+          <p class="precio">$320.00</p>
+          <p class="pago-azul">24 x $13.54 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Niña Trenza Tang', 320.00, 'Huarache N2.jpeg')">Agregar al carrito</button>
+        </div>
+        <div class="producto-card">
+          <img src="Imagenes/Huarache N3.jpeg" alt="Huarache Bordado Frida Shedrón Cerrado" />
+          <h3>Huarache Niña Oro<br>Sintético Colores</h3>
+          <p class="precio">$390.00</p>
+          <p class="pago-azul">24 x $16.25 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Niña Oro Sintético Colores', 390.00, 'Huarache N3.jpeg')">Agregar al carrito</button>
+        </div>
+        <div class="producto-card">
+          <img src="Imagenes/Huarache N4.jpeg" alt="Huarache Talón Pulsera Troquelado Trenza Amarillo" />
+          <h3>Huarache Niña Tiras<br>Colores Bordado</h3>
+          <p class="precio">$325.00</p>
+          <p class="pago-azul">24 x $13.55 sin intereses</p>
+          <button onclick="agregarAlCarrito('Huarache Niña Tiras Colores Bordado', 325.00, 'Huarache N4.jpeg')">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <!-- Logo -->
+<section class="imagen-logo">
+    <div class="container">
+      <img src="Imagenes/Logo B.png" alt="Huarache artesanal destacado">
+    </div>
+  </section>
+  
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="brand">Stylishsteps</div>
+        <div class="subscription">
+  <span>Regístrate y recibe nuestras ofertas.</span>
+  <input type="email" id="correo-suscripcion" placeholder="Ingresa tu correo electrónico...">
+  <button onclick="enviarCorreo()">Enviar</button>
+        </div>
+      </div>
+    
+      <div class="footer-middle">
+        <div class="footer-column">
+          <h4>Información</h4>
+          <ul>
+  <li><a href="Index.html#quienes-somos">¿Quiénes somos?</a></li>
+  <li><a href="Index.html#sobre-nosotros">¿Cómo comprar?</a></li>
+  <li><a href="Preguntas.html">Preguntas frecuentes</a></li>
+</ul>
+
+        </div>
+    
+        <div class="footer-column">
+          <h4>Contáctanos</h4>
+           <ul>
+            <li><a href="WhatsApp.html">WhatsApp</a></li>
+            <li><a href="Mayoristas.html">Mayoristas</a></li>
+            <li><a href="ventas@stylishsteps.com">ventas@stylishsteps.com</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-f"></i>
+        </div>
+      </div>
+    
+      <div class="payment-wrapper">
+        <div class="payment-methods">
+          <span>Métodos de pago</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        Copyright STYLISHSTEPS - 2025. Todos los derechos reservados.
+      </div>
+    </footer>
+
+    <script>
+      function buscar() {
+    const termino = document.getElementById('busqueda').value.trim().toLowerCase();
+
+    if (!termino) {
+      alert("Por favor escribe algo para buscar.");
+      return;
+    }
+
+    // Palabras clave y redirecciones
+    if (termino.includes("dama")) {
+      window.location.href = "Dama.html";
+    } else if (termino.includes("caballero")) {
+      window.location.href = "Caballero.html";
+    } else if (termino.includes("niña")) {
+      window.location.href = "Niña.html";
+    } else if (termino.includes("carrito")) {
+      window.location.href = "Carrito.html";
+    } else if (termino.includes("pedidos")) {
+      window.location.href = "Pedidos.html";
+    } else if (termino.includes("mision")) {
+      window.location.href = "Index.html#mision";
+    } else if (termino.includes("visión") || termino.includes("vision")) {
+      window.location.href = "Index.html#vision";
+    } else if (termino.includes("nosotros")) {
+      window.location.href = "Index.html#sobre-nosotros";
+    } else if (termino.includes("iniciar sesión") || termino.includes("login") || termino.includes("sesión") || termino.includes("sesion")) {
+      window.location.href = "Iniciar-sesion.html";
+    } else {
+      alert("No se encontró ningún resultado para: " + termino);
+    }
+  }
+  function enviarCorreo() {
+    const correo = document.getElementById('correo-suscripcion').value.trim();
+
+    // Validación con expresión regular
+    const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!correo) {
+      alert("Por favor, ingresa un correo electrónico.");
+    } else if (!correoValido.test(correo)) {
+      alert("Por favor, ingresa un correo electrónico válido (ejemplo@dominio.com).");
+    } else {
+      window.location.href = "Iniciar-sesion.html?email=" + encodeURIComponent(correo);
+    }
+  }
+
+  function agregarAlCarrito(nombre, precio, imagen) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    carrito.push({
+      nombre: nombre,
+      precio: precio,
+      imagen: imagen,
+      cantidad: 1
+    });
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(nombre + " se ha agregado al carrito.");
+  }
+</script>
+  
+  </body>
+  </html>

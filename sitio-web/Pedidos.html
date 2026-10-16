@@ -1,0 +1,732 @@
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Pedidos - Stylish Steps</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f1dbc0;
+      padding: 10px 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+     background-color: transparent;
+    }
+
+    .logo img {
+      width: 90px;
+      margin-right: 20px;
+      border-radius: 10px;
+      box-shadow: none;
+    }
+
+    .logo-text strong {
+      font-size: 20px;
+      color: #3b1e1a;
+    }
+
+    .logo-text span {
+      color: #9c5b3d;
+    }
+
+    .logo-text p {
+      font-size: 10px;
+      margin: 0;
+      color: #3b1e1a;
+    }
+
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6b3e3e;
+      font-weight: bold;
+    }
+
+    .search-login-cart {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c9a88c;
+  padding: 0 6px; /* aún menos padding */
+  background-color: #f1dbc0;
+  border-radius: 2px;
+  height: 28px; /* altura fija más baja */
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  height: 100%;  /* se adapta al contenedor */
+  line-height: 1;
+}
+
+.search-box i {
+  font-size: 14px; /* ícono más pequeño */
+  line-height: 1;
+}
+
+
+    .search-login-cart i {
+      font-size: 18px;
+      color: #6b3e3e;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 25px 0 10px;
+      color: #000000;
+    }
+
+    label {
+      margin: 15px 0 5px;
+      display: block;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+    .radio-group {
+  background-color: #f3f3f3;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.radio-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1; /* permite que el contenido ocupe todo el ancho disponible */
+}
+
+.radio-content input[type="radio"] {
+  transform: scale(1); /* tamaño normal */
+}
+
+.radio-content label {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.radio-price {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+  align-self: center;
+  margin-left: 10px;
+}
+
+
+.entrega-opcion input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  align-self: flex-start;
+}
+
+.entrega-opcion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3f3f3;
+  padding: 20px 16px;
+  border-radius: 6px;
+  height: auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.radio-wrapper {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.radio-wrapper input[type="radio"] {
+  transform: scale(1.2);
+}
+
+.info-entrega {
+  flex: 1 1 auto;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.horario {
+  color: #555;
+  font-size: 13px;
+}
+
+.precio-entrega {
+  flex: 0 0 auto;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+
+    .two-columns {
+  display: flex;
+  gap: 10px;
+}
+
+.two-columns input,
+.two-columns select {
+  width: 100%;
+}
+
+    button {
+      background: #f1dbc0;
+      color: #000;
+      font-weight: 600;
+      padding: 15px;
+      border: none;
+      width: 100%;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .footer-top .brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* --- IMAGEN DE LOGO --- */
+    .imagen-logo {
+    padding: 2rem 0;
+    }
+
+    .imagen-logo img {
+      background-color: transparent;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+        background-color: #edf0f1;
+        padding: 30px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-top .subscription {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        font-size: 16px;
+    }
+
+    .footer-top .subscription span {
+        white-space: nowrap;
+        font-size: 16px;
+    }
+
+    .footer-top input[type="email"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        width: 260px;
+        font-size: 14px;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    .footer-top button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: #000;
+        text-decoration: underline;
+        padding: 0;
+        margin-left: 5px;
+        white-space: nowrap;
+        line-height: normal;
+        align-self: center;
+    }
+
+
+    .footer-middle {
+      background-color: #3b1e1a;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 10%;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .payment-wrapper {
+      background-color: #3b1e1a;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10% 20px;
+      flex-wrap: wrap;
+    }
+
+    .payment-methods {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .payment-methods img {
+      height: 30px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .social-icons i {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      background-color: #321e1c;
+      color: #fff;
+      text-align: left;
+      padding: 15px 10%;
+      font-size: 13px;
+    }
+
+    .footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  display: block;              /* Hace que cada enlace ocupe su propia línea */
+  text-decoration: none;       /* Quita el subrayado */
+  color: inherit;              /* Usa el mismo color que el texto normal */
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;  /* (opcional) subrayado al pasar el cursor */
+}
+
+    @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin: 5px 0;
+  }
+
+  .search-login-cart {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .two-columns {
+    flex-direction: column;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+
+  .footer-top,
+  .footer-middle,
+  .payment-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-column,
+  .subscription,
+  .payment-methods {
+    width: 100%;
+  }
+
+  .radio-option {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+   <!-- ENCABEZADO -->
+   <header class="navbar">
+    <div class="logo">
+      <img src="Imagenes/Logo C.jpeg" alt="Logo Stylish Steps" />
+      </div>
+    </div>
+    <nav class="nav-links">
+       <a href="Index.html">Inicio</a>
+      <a href="Dama.html">Dama</a>
+      <a href="Caballero.html">Caballero</a>
+      <a href="Niña.html">Niña</a>
+      <a href="Index.html#sobre-nosotros">Sobre Nosotros</a>
+
+    </nav>
+    <div class="search-login-cart">
+  <div class="search-box">
+    <input type="text" id="busqueda" placeholder="Buscar...">
+    <i class="fas fa-search" onclick="buscar()"></i>
+  </div>
+       <a href="Mi cuenta.html">
+  <i class="fas fa-user"></i>
+</a>
+      <a href="Carrito.html">
+  <i class="fas fa-shopping-cart"></i>
+</a>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container">
+    <h2>Entrega</h2>
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" placeholder="correo@ejemplo.com" />
+    
+    <div class="entrega-opcion">
+      <div class="radio-wrapper">
+        <input type="radio" name="entrega" checked />
+      </div>
+      <div class="info-entrega">
+        <strong>Stylish Steps </strong><br>
+         <span id="fecha-recoge">Recoge el lunes 24/03</span><br>
+  <span class="horario">Lunes a viernes, de 10:00 a 15:00</span>
+      </div>
+      <div class="precio-entrega">
+        <strong>Gratis</strong>
+      </div>
+    </div>    
+    
+    <h2>Datos de entrega</h2>
+    <label for="pais">País</label>
+<select id="pais">
+      <option>México</option>
+      <option>Estados Unidos</option>
+      <option>Canadá</option>
+      <option>Colombia</option>
+      <option>Argentina</option>
+    </select>
+
+   <label for="nombre">Nombre</label>
+<input type="text" id="nombre" placeholder="Nombre" />
+
+<label for="apellidos">Apellidos</label>
+<input type="text" id="apellidos" placeholder="Apellidos" />
+
+<label for="direccion">Dirección</label>
+<input type="text" id="direccion" placeholder="Calle y número" />
+
+<label for="colonia">Colonia</label>
+<input type="text" id="colonia" placeholder="Colonia" />
+
+<div class="two-columns">
+  <div style="flex: 1;">
+    <input type="text" id="numExterior" placeholder="Número exterior" />
+  </div>
+  <div style="flex: 1;">
+    <input type="text" id="numInterior" placeholder="Número interior (opcional)" />
+  </div>
+</div>
+
+<label for="municipio">Municipio / Alcaldía</label>
+<input type="text" id="municipio" placeholder="Municipio" />
+
+<label for="cp">Código postal</label>
+<input type="text" id="cp" placeholder="CP" />
+
+<label for="estado">Estado</label>
+<select id="estado">
+  <option>Ciudad de México</option>
+  <option>Jalisco</option>
+  <option>Michoacan</option>
+  <option>Nuevo León</option>
+  <option>Veracruz</option>
+</select>
+
+<label for="telefono">Teléfono</label>
+<input type="tel" id="telefono" placeholder="Teléfono" />
+
+<!-- Datos de la tarjeta -->
+<h2>Datos de la tarjeta</h2>
+<input type="text" id="tarjeta" placeholder="Número de tarjeta" />
+
+<div class="two-columns">
+  <div style="flex: 1;">
+    <input type="text" id="fecha" placeholder="MM/AA" />
+  </div>
+  <div style="flex: 1;">
+    <input type="text" id="cvc" placeholder="CVC" />
+  </div>
+</div>
+
+    <button onclick="validarFormulario()">Continuar para el pago</button>
+  </div>
+
+  <!-- Logo -->
+<section class="imagen-logo">
+  <div class="container">
+    <img src="Imagenes/Logo B.png" alt="Huarache artesanal destacado">
+  </div>
+</section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="brand">Stylishsteps</div>
+     <div class="subscription">
+  <span>Regístrate y recibe nuestras ofertas.</span>
+  <input type="email" id="correo-suscripcion" placeholder="Ingresa tu correo electrónico...">
+  <button onclick="enviarCorreo()">Enviar</button>
+      </div>
+    </div>
+
+    <div class="footer-middle">
+      <div class="footer-column">
+        <h4>Información</h4>
+        <ul>
+  <li><a href="Index.html#quienes-somos">¿Quiénes somos?</a></li>
+  <li><a href="Index.html#sobre-nosotros">¿Cómo comprar?</a></li>
+  <li><a href="Preguntas.html">Preguntas frecuentes</a></li>
+</ul>
+
+      </div>
+      <div class="footer-column">
+        <h4>Contáctanos</h4>
+         <ul>
+            <li><a href="WhatsApp.html">WhatsApp</a></li>
+            <li><a href="Mayoristas.html">Mayoristas</a></li>
+            <li><a href="ventas@stylishsteps.com">ventas@stylishsteps.com</a></li>
+          </ul>
+      </div>
+      <div class="footer-column social-icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook-f"></i>
+      </div>
+    </div>
+
+    <div class="payment-wrapper">
+      <div class="payment-methods">
+        <span>Métodos de pago</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright STYLISHSTEPS - 2025. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    function buscar() {
+    const termino = document.getElementById('busqueda').value.trim().toLowerCase();
+
+    if (!termino) {
+      alert("Por favor escribe algo para buscar.");
+      return;
+    }
+
+    // Palabras clave y redirecciones
+    if (termino.includes("dama")) {
+      window.location.href = "Dama.html";
+    } else if (termino.includes("caballero")) {
+      window.location.href = "Caballero.html";
+    } else if (termino.includes("niña")) {
+      window.location.href = "Niña.html";
+    } else if (termino.includes("carrito")) {
+      window.location.href = "Carrito.html";
+    } else if (termino.includes("pedidos")) {
+      window.location.href = "Pedidos.html";
+    } else if (termino.includes("mision")) {
+      window.location.href = "Index.html#mision";
+    } else if (termino.includes("visión") || termino.includes("vision")) {
+      window.location.href = "Index.html#vision";
+    } else if (termino.includes("nosotros")) {
+      window.location.href = "Index.html#sobre-nosotros";
+    } else if (termino.includes("iniciar sesión") || termino.includes("login") || termino.includes("sesión") || termino.includes("sesion")) {
+      window.location.href = "Iniciar-sesion.html";
+    } else {
+      alert("No se encontró ningún resultado para: " + termino);
+    }
+  }
+  function enviarCorreo() {
+    const correo = document.getElementById('correo-suscripcion').value.trim();
+
+    // Validación con expresión regular
+    const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!correo) {
+      alert("Por favor, ingresa un correo electrónico.");
+    } else if (!correoValido.test(correo)) {
+      alert("Por favor, ingresa un correo electrónico válido (ejemplo@dominio.com).");
+    } else {
+      window.location.href = "Iniciar-sesion.html?email=" + encodeURIComponent(correo);
+    }
+  }
+
+  function validarFormulario() {
+  const campos = [
+    'correo', 'nombre', 'apellidos', 'direccion', 'colonia',
+    'numExterior', 'municipio', 'cp', 'telefono',
+    'tarjeta', 'fecha', 'cvc'
+  ];
+
+  for (const id of campos) {
+    const valor = document.getElementById(id)?.value.trim();
+    if (!valor) {
+      alert("Por favor llena todos los campos obligatorios.");
+      return;
+    }
+  }
+
+  // Validar correo electrónico
+  const correo = document.getElementById('correo').value.trim();
+  const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!correoValido.test(correo)) {
+    alert("Por favor ingresa un correo electrónico válido.");
+    return;
+  }
+
+  // Validar número de tarjeta
+  const tarjeta = document.getElementById('tarjeta').value.trim();
+  if (!/^\d{16}$/.test(tarjeta)) {
+    alert("El número de tarjeta debe tener 16 dígitos.");
+    return;
+  }
+
+  // Validar CVC
+  const cvc = document.getElementById('cvc').value.trim();
+  if (!/^\d{3}$/.test(cvc)) {
+    alert("El CVC debe tener 3 dígitos.");
+    return;
+  }
+
+  // Validar MM/AA
+  const fecha = document.getElementById('fecha').value.trim();
+  if (!/^\d{2}\/\d{2}$/.test(fecha)) {
+    alert("La fecha debe tener el formato MM/AA.");
+    return;
+  }
+
+  // Si todo está bien, redireccionar a Index.html
+  window.location.href = "Index.html";
+}
+ function actualizarFechaRecoge() {
+    const fechaActual = new Date();
+    fechaActual.setDate(fechaActual.getDate() + 15); // Sumamos 15 días
+
+    const opciones = { weekday: 'long', day: '2-digit', month: '2-digit' };
+    const fechaFormateada = fechaActual.toLocaleDateString('es-MX', opciones);
+
+    // Capitalizar primera letra del día (por defecto viene en minúsculas)
+    const fechaFinal = fechaFormateada.charAt(0).toUpperCase() + fechaFormateada.slice(1);
+
+    document.getElementById('fecha-recoge').textContent = `Recoge el ${fechaFinal}`;
+  }
+
+  // Ejecutar al cargar la página
+  window.addEventListener('DOMContentLoaded', actualizarFechaRecoge);
+</script>
+
+</body>
+</html>

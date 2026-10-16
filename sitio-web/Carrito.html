@@ -1,0 +1,351 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Carrito
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <!-- Importar fuentes de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ENCABEZADO PERSONALIZADO */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f1dbc0;
+      padding: 10px 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+     background-color: transparent;
+    }
+
+    .logo img {
+      width: 90px;
+      margin-right: 20px;
+      border-radius: 10px;
+      box-shadow: none;
+    }
+
+    .logo-text strong {
+      font-size: 20px;
+      color: #3b1e1a;
+    }
+
+    .logo-text span {
+      color: #9c5b3d;
+    }
+
+    .logo-text p {
+      font-size: 10px;
+      margin: 0;
+      color: #3b1e1a;
+    }
+
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6b3e3e;
+      font-weight: bold;
+    }
+
+    .search-login-cart {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #c9a88c;
+      padding: 5px 10px;
+      background-color: #f1dbc0;
+      border-radius: 2px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+
+    .search-box i {
+      color: #6b3e3e;
+    }
+
+    .search-login-cart i {
+      font-size: 18px;
+      color: #6b3e3e;
+      cursor: pointer;
+    }
+    /* Estilos de fuentes personalizados basados en el archivo de referencia */
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    h1, h2, .heading-1-strong, .heading-2-novedades, .heading-2-los-productos-son-originales {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Colores personalizados basados en el archivo de referencia */
+    .bg-custom {
+      background-color: #EFDDC5;
+    }
+    
+    .btn-custom {
+      background-color: #EFDDC5;
+      color: black;
+      font-weight: 600;
+    }
+    
+    .text-price {
+      color: #3C3C3C;
+      font-weight: 600;
+    }
+    
+    .text-discount {
+      color: #D9534F;
+    }
+    
+    /* Estilos para los precios y pagos sin intereses */
+    .price-installment {
+      font-size: 0.875rem;
+      color: #666;
+    }
+
+    .payment-wrapper {
+      background-color: #fcf8f8;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10% 20px;
+      flex-wrap: wrap;
+    }
+    
+    .payment-methods {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .payment-methods img {
+      height: 30px;  /* Ajuste de tamaño para mejor visibilidad */
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .social-icons i {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+  </style>
+ </head>
+   <!-- ENCABEZADO MODERNO PERSONALIZADO -->
+  <header class="navbar">
+  <div class="logo">
+    <img src="Imagenes/Logo C.jpeg" alt="Logo Stylish Steps" />
+  </div>
+  <nav class="nav-links">
+    <a href="Index.html">Inicio</a>
+    <a href="Dama.html">Dama</a>
+    <a href="Caballero.html">Caballero</a>
+    <a href="Niña.html">Niña</a>
+    <a href="Index.html#sobre-nosotros">Sobre Nosotros</a>
+  </nav>
+  <div class="search-login-cart">
+    <div class="search-box">
+      <input type="text" id="busqueda" placeholder="Buscar..." />
+      <i class="fas fa-search" onclick="buscar()"></i>
+    </div>
+    <a href="Mi cuenta.html"><i class="fas fa-user"></i></a>
+    <a href="Carrito.html"><i class="fas fa-shopping-cart"></i></a>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto p-4">
+  <h1 class="text-2xl font-bold mb-4 font-serif">Mi Bolsa</h1>
+  <div class="flex flex-col lg:flex-row lg:space-x-4">
+    <!-- Productos del carrito -->
+    <div class="flex-1 bg-white p-4 rounded-md shadow-md carrito-items">
+      <!-- Aquí se insertan dinámicamente -->
+    </div>
+
+    <!-- Resumen del pedido -->
+    <div class="w-full lg:w-1/3 bg-white p-4 rounded-md shadow-md mt-4 lg:mt-0 resumen-compra">
+      <!-- Se actualizará automáticamente con JS -->
+    </div>
+  </div>
+</main>
+
+<script>
+function buscar() {
+  const termino = document.getElementById('busqueda').value.trim().toLowerCase();
+  if (!termino) return alert("Por favor escribe algo para buscar.");
+
+  if (termino.includes("dama")) window.location.href = "Dama.html";
+  else if (termino.includes("caballero")) window.location.href = "Caballero.html";
+  else if (termino.includes("niña")) window.location.href = "Niña.html";
+  else if (termino.includes("carrito")) window.location.href = "Carrito.html";
+  else if (termino.includes("pedidos")) window.location.href = "Pedidos.html";
+  else if (termino.includes("mision")) window.location.href = "Index.html#mision";
+  else if (termino.includes("visión") || termino.includes("vision")) window.location.href = "Index.html#vision";
+  else if (termino.includes("nosotros")) window.location.href = "Index.html#sobre-nosotros";
+  else if (termino.includes("iniciar sesión") || termino.includes("login") || termino.includes("sesión") || termino.includes("sesion")) window.location.href = "Iniciar-sesion.html";
+  else alert("No se encontró ningún resultado para: " + termino);
+}
+
+function agregarAlCarrito(nombre, precio, imagen) {
+  const producto = { nombre, precio, imagen, cantidad: 1 };
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const index = carrito.findIndex(item => item.nombre === nombre);
+  if (index !== -1) carrito[index].cantidad += 1;
+  else carrito.push(producto);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  alert("Producto agregado al carrito.");
+  window.location.href = "Carrito.html";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contenedor = document.querySelector(".carrito-items");
+  const resumen = document.querySelector(".resumen-compra");
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  if (carrito.length === 0) {
+    contenedor.innerHTML = "<p>No hay productos en tu carrito.</p>";
+    resumen.innerHTML = "";
+    return;
+  }
+
+  let subtotal = 0;
+
+  carrito.forEach(producto => {
+    const total = producto.precio * producto.cantidad;
+    subtotal += total;
+
+    const itemHTML = `
+      <div class="border-b pb-4 mb-4">
+        <div class="flex items-center space-x-4">
+          <img class="h-20" src="Imagenes/${producto.imagen}" alt="${producto.nombre}" />
+          <div class="flex-1">
+            <p class="font-medium">${producto.nombre}</p>
+            <div class="cantidad-control flex items-center space-x-2">
+  <button onclick="cambiarCantidad(${carrito.indexOf(producto)}, -1)" class="px-2 bg-gray-200 rounded">-</button>
+  <span id="cantidad-${carrito.indexOf(producto)}">${producto.cantidad}</span>
+  <button onclick="cambiarCantidad(${carrito.indexOf(producto)}, 1)" class="px-2 bg-gray-200 rounded">+</button>
+</div>
+<label for="talla">Talla:</label>
+<select name="talla" id="talla">
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="14">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+</select>
+          </div>
+          <div class="text-right font-bold text-discount">$${total.toFixed(2)}</div>
+        </div>
+      </div>
+    `;
+    contenedor.insertAdjacentHTML("beforeend", itemHTML);
+  });
+
+  // Resumen
+  const descuento = subtotal * 0.15; // por ejemplo, 15%
+  const totalFinal = subtotal - descuento;
+
+  resumen.innerHTML = `
+    <div class="border-b pb-4 mb-4">
+      <div class="flex justify-between">
+        <span class="font-bold">Subtotal (${carrito.length} productos):</span>
+        <span>$${subtotal.toFixed(2)}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-bold">Descuento:</span>
+        <span>$${descuento.toFixed(2)}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-bold">Envío:</span>
+        <span>Gratis</span>
+      </div>
+    </div>
+    <div class="flex justify-between mb-4">
+      <span class="font-bold text-lg">Total (IVA incluido):</span>
+      <span class="text-discount font-semibold text-lg">$${totalFinal.toFixed(2)}</span>
+    </div>
+    <button onclick="finalizarCompra()" class="btn-custom p-3 rounded-md w-full font-semibold text-lg">Comprar</button>
+    <p class="text-sm text-gray-500 mt-4 font-light">*Los precios aplican de acuerdo a forma de pago.</p>
+  `;
+});
+
+function cambiarCantidad(index, cambio) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  if (carrito[index]) {
+    carrito[index].cantidad += cambio;
+    if (carrito[index].cantidad <= 0) {
+      carrito.splice(index, 1); // eliminar producto si la cantidad es 0
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    location.reload(); // recarga para actualizar vista
+  }
+}
+
+function agregarAlCarrito(nombre, precio, imagen) {
+  let talla = prompt("¿Qué talla deseas? (Ej: 23, 24, 25)");
+  if (!talla) return;
+
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  carrito.push({
+    nombre: nombre,
+    precio: precio,
+    imagen: imagen,
+    cantidad: 1,
+    talla: talla
+  });
+
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  alert(nombre + " (Talla " + talla + ") se ha agregado al carrito.");
+}
+
+function finalizarCompra() {
+  // Aquí puedes agregar lógica para validar o enviar datos al backend si fuera necesario.
+  window.location.href = "Pedidos.html";
+}
+
+</script>
+
+</body>
+</html>
