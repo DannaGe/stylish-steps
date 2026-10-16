@@ -21,7 +21,7 @@ Instituto Tecnológico de Jiquilpan – Ingeniería en Sistemas Computacionales 
 - `base-de-datos/` – script SQL de la base de datos y documento de implementación
 - `pruebas/` – diseño de casos de prueba y pruebas de componentes
 - `documentacion/` – manual del sistema, documentación de usuario e informe técnico
-- `sitio-web/` – prototipo del sitio web en HTML y CSS
+- `sitio-web/` – prototipo del sitio web en HTML y CSS https://dannage.github.io/stylish-steps/sitio-web/
 
 ## Equipo
 - Danna Geraldine Ávila García
